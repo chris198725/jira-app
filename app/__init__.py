@@ -10,7 +10,7 @@ class JiraClient(object):
         self.site_url = config('SITE_URL')
         self.api_version = config('API_VERSION')
         self.auth = HTTPBasicAuth(self.account, self.token)
-        self.api_url = self.site_url + self.api_version
+        self.api_url = self.site_url + '/rest/api/' + self.api_version
         self.request_header = {
             "Content-Type": "application/json",
             "Accept": "application/json"
